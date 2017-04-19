@@ -1,0 +1,25 @@
+﻿  AppDelegate.cpp
+  HelloWorldScene.cpp
+  main.cpp
+d:\yeonjaelee\cocos2d-x\04_spritex1\cocos2d\cocos\physics\ccphysicsbody.h : warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오. (소스 파일 컴파일 중 main.cpp)
+d:\yeonjaelee\cocos2d-x\04_spritex1\cocos2d\cocos\physics\ccphysicsshape.h : warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오. (소스 파일 컴파일 중 main.cpp)
+d:\yeonjaelee\cocos2d-x\04_spritex1\cocos2d\cocos\physics\ccphysicsbody.h : warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오. (소스 파일 컴파일 중 ..\Classes\AppDelegate.cpp)
+d:\yeonjaelee\cocos2d-x\04_spritex1\cocos2d\cocos\physics\ccphysicsshape.h : warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오. (소스 파일 컴파일 중 ..\Classes\AppDelegate.cpp)
+d:\yeonjaelee\cocos2d-x\04_spritex1\cocos2d\cocos\physics\ccphysicsbody.h : warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오. (소스 파일 컴파일 중 ..\Classes\HelloWorldScene.cpp)
+d:\yeonjaelee\cocos2d-x\04_spritex1\cocos2d\cocos\physics\ccphysicsshape.h : warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오. (소스 파일 컴파일 중 ..\Classes\HelloWorldScene.cpp)
+d:\yeonjaelee\cocos2d-x\04_spritex1\cocos2d\cocos\base\ccutf8.h : warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오. (소스 파일 컴파일 중 main.cpp)
+d:\yeonjaelee\cocos2d-x\04_spritex1\cocos2d\cocos\base\ccutf8.h : warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오. (소스 파일 컴파일 중 ..\Classes\AppDelegate.cpp)
+d:\yeonjaelee\cocos2d-x\04_spritex1\cocos2d\cocos\base\ccutf8.h : warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오. (소스 파일 컴파일 중 ..\Classes\HelloWorldScene.cpp)
+d:\yeonjaelee\cocos2d-x\04_spritex1\cocos2d\cocos\platform\ccsaxparser.h : warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오. (소스 파일 컴파일 중 main.cpp)
+d:\yeonjaelee\cocos2d-x\04_spritex1\cocos2d\cocos\platform\ccsaxparser.h : warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오. (소스 파일 컴파일 중 ..\Classes\AppDelegate.cpp)
+d:\yeonjaelee\cocos2d-x\04_spritex1\cocos2d\cocos\platform\ccsaxparser.h : warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오. (소스 파일 컴파일 중 ..\Classes\HelloWorldScene.cpp)
+AppDelegate.obj : warning LNK4075: '/EDITANDCONTINUE'이(가) '/SAFESEH' 사양으로 인해 무시됩니다.
+     D:\YeonjaeLee\Cocos2d-x\04_SpritEx1\proj.win32\Debug.win32\04_SpritEx1.lib 라이브러리 및 D:\YeonjaeLee\Cocos2d-x\04_SpritEx1\proj.win32\Debug.win32\04_SpritEx1.exp 개체를 생성하고 있습니다.
+  04_SpritEx1.vcxproj -> D:\YeonjaeLee\Cocos2d-x\04_SpritEx1\proj.win32\Debug.win32\04_SpritEx1.exe
+  D:\YeonjaeLee\Cocos2d-x\04_SpritEx1\Resources\CloseNormal.png -> D:\YeonjaeLee\Cocos2d-x\04_SpritEx1\proj.win32\Debug.win32\CloseNormal.png
+  D:\YeonjaeLee\Cocos2d-x\04_SpritEx1\Resources\CloseSelected.png -> D:\YeonjaeLee\Cocos2d-x\04_SpritEx1\proj.win32\Debug.win32\CloseSelected.png
+  D:\YeonjaeLee\Cocos2d-x\04_SpritEx1\Resources\HelloWorld.png -> D:\YeonjaeLee\Cocos2d-x\04_SpritEx1\proj.win32\Debug.win32\HelloWorld.png
+  D:\YeonjaeLee\Cocos2d-x\04_SpritEx1\Resources\fonts\arial.ttf -> D:\YeonjaeLee\Cocos2d-x\04_SpritEx1\proj.win32\Debug.win32\fonts\arial.ttf
+  D:\YeonjaeLee\Cocos2d-x\04_SpritEx1\Resources\fonts\Marker Felt.ttf -> D:\YeonjaeLee\Cocos2d-x\04_SpritEx1\proj.win32\Debug.win32\fonts\Marker Felt.ttf
+  D:\YeonjaeLee\Cocos2d-x\04_SpritEx1\Resources\res\.gitkeep -> D:\YeonjaeLee\Cocos2d-x\04_SpritEx1\proj.win32\Debug.win32\res\.gitkeep
+  6개 파일이 복사되었습니다.
