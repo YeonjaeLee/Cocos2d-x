@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="20" height="10" tilewidth="33" tileheight="33" nextobjectid="2">
+ <tileset firstgid="1" name="RunCliff" tilewidth="33" tileheight="33" spacing="1" margin="1" tilecount="198" columns="18">
+  <image source="ortho-test2.png" width="640" height="400"/>
+ </tileset>
+ <tileset firstgid="199" name="Meta" tilewidth="32" tileheight="32" spacing="1" margin="1" tilecount="2" columns="2">
+  <image source="metaset.png" width="67" height="34"/>
+ </tileset>
+ <layer name="Background" width="20" height="10">
+  <data encoding="base64" compression="zlib">
+   eJxjYBiaoBeI+wbIbkkglgJiaSqZpw3EOkCsSyXzQCCABLWGJJjHRiZGBsjiGmRiZECuGcSYBwAV7Qh1
+  </data>
+ </layer>
+ <objectgroup name="Objects">
+  <object id="1" name="SpawnPoint" x="60" y="203"/>
+ </objectgroup>
+ <layer name="MetaInfo" width="20" height="10">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFo4B4cJxMfAIJk2vGQJgHAEIWLq4=
+  </data>
+ </layer>
+</map>

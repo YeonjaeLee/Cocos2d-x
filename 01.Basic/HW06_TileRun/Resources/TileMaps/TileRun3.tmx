@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="40" height="10" tilewidth="32" tileheight="32" nextobjectid="2">
+ <tileset firstgid="1" name="TileRun3" tilewidth="32" tileheight="32" spacing="2" margin="2" tilecount="198" columns="18">
+  <image source="ortho-test2.png" width="640" height="400"/>
+ </tileset>
+ <tileset firstgid="199" name="Meta" tilewidth="32" tileheight="32" spacing="1" margin="1" tilecount="2" columns="2">
+  <image source="metaset.png" width="67" height="34"/>
+  <tile id="0">
+   <properties>
+    <property name="Ground" value="YES"/>
+   </properties>
+  </tile>
+  <tile id="1">
+   <properties>
+    <property name="Cliff" value="YES"/>
+   </properties>
+  </tile>
+ </tileset>
+ <layer name="Background" width="40" height="10">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFwxlIU6CXDQ2DgCQQS1FoLgywALEuFcxBBtpArEMDc6kJ7AbaAUjAAYsYNd3HSgWMzTwOKpmtQQWMDKhhHrUxLd0HAM1qDj8=
+  </data>
+ </layer>
+ <objectgroup name="Objects">
+  <object id="1" name="SpawnPoint" x="60" y="202"/>
+ </objectgroup>
+ <layer name="MetaInfo" width="40" height="10">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFo2AUjGRwAglTGxynAkZ2HzXMozYeye4DAHW7X6o=
+  </data>
+ </layer>
+</map>
