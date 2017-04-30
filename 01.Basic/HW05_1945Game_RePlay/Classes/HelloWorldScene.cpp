@@ -25,6 +25,17 @@ bool HelloWorld::init()
 		return false;
 	}
 	/////////////////////////////////////////////
+
+	MenuItemImage *pCloseItem = MenuItemImage::create(
+		"CloseNormal.png",
+		"CloseSelected.png",
+		this,
+		menu_selector(HelloWorld::menuCloseCallback));
+	pCloseItem->setPosition(Vec2(20, Director::sharedDirector()->getWinSize().height - 20));
+	Menu* pMenu = Menu::create(pCloseItem, NULL);
+	pMenu->setPosition(Vec2(0, 0));
+	this->addChild(pMenu, 1);
+
 	SimpleAudioEngine::getInstance()->playBackgroundMusic("Sounds/mainMainMusic.mp3", true);
 
 	SimpleAudioEngine::getInstance()->setEffectsVolume(1.0);
@@ -35,7 +46,7 @@ bool HelloWorld::init()
 		"1945/REPLAYSELECTED.png",
 		CC_CALLBACK_1(HelloWorld::doClick, this));
 	pMenu_pReplayItem = Menu::create(pReplayItem, nullptr);
-	pMenu_pReplayItem->setPosition(Vec2(size_.width / 2, size_.height / 2 - 50));
+	pMenu_pReplayItem->setPosition(Vec2(size_.width / 2, size_.height / 2 - 40));
 	pMenu_pReplayItem->setVisible(false);
 	this->addChild(pMenu_pReplayItem, 3);
 
@@ -70,8 +81,8 @@ bool HelloWorld::init()
 	this->addChild(UserLife3);
 
 	GameOver = Sprite::create("1945/GAMEOVER.png");
-	GameOver->setPosition(Vec2(size_.width /2, size_.height / 2));
-	GameOver->setScale(1.0);
+	GameOver->setPosition(Vec2(size_.width /2 + 5, size_.height / 2 + 50));
+	GameOver->setScale(1.2);
 	GameOver->setVisible(false);
 	this->addChild(GameOver,3);
 
@@ -195,26 +206,19 @@ void HelloWorld::Update(float time)
 	eraseEnemy.clear();
 	eraseMissile.clear();
 
-	// 유저 비행기가 죽었을때만 체크하여 부활처리
-	if (!LifeCount > 0)
-	{
-		//시간을 누적시켜서 3초 이상 경과되었을 때만 부활시킨다
-		regenCheckTime_ += time;
-		log("%d", regenCheckTime_);
-		if (regenCheckTime_ >= 3.f)
-		{
-			//유저 비행기 부활처리
-			player_ = Sprite::create("1945/airplain_01.png");
-			player_->setPosition(Vec2(size_.width / 2, 50));
-			this->addChild(player_, 1);
-			LifeCount = 3;
-			/*pMenu_pReplayItem->setVisible(false);
-			GameOver->setVisible(false);*/
-//			SimpleAudioEngine::getInstance()->playBackgroundMusic("Sounds/mainMainMusic.mp3", true);
-//			Director::getInstance()->resume();
-			
-		}
-	}
+	//// 유저 비행기가 죽었을때만 체크하여 부활처리
+	//if (!player_ && regenCheckTime_ != -1.f && playerLife > 0)
+	//{
+	//	//시간을 누적시켜서 3초 이상 경과되었을 때만 부활시킨다
+	//	regenCheckTime_ += time;
+	//	if (regenCheckTime_ >= 3.f)
+	//	{
+	//		//유저 비행기 부활처리
+	//		player_ = CCSprite::create("1945/airplain_01.png");
+	//		player_->setPosition(ccp(size_.width / 2, 50));
+	//		this->addChild(player_, 1);
+	//	}
+	//}
 
 	// 현재 배열의 크기 = 적 비행기 갯수
 	log("%d", enemy_.size());
@@ -246,14 +250,13 @@ void HelloWorld::UserLife(int LifeCount)
 		UserLife2->setVisible(false);
 		UserLife3->setVisible(false);
 
-//		SimpleAudioEngine::getInstance()->pauseBackgroundMusic();
+		SimpleAudioEngine::getInstance()->pauseBackgroundMusic();
 		SimpleAudioEngine::getInstance()->playEffect("Sounds/shipDestroyEffect.mp3");
-//		Director::getInstance()->pause();
-
+		Director::getInstance()->pause();
+//		this->removeChild(player_, true);
 		player_->setVisible(false);
-		
-		/*GameOver->setVisible(true);
-		pMenu_pReplayItem->setVisible(true);*/
+		GameOver->setVisible(true);
+		pMenu_pReplayItem->setVisible(true);
 	}
 }
 

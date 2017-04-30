@@ -15,9 +15,6 @@ public:
 	virtual bool init();
 
 	CREATE_FUNC(HelloWorld);
-
-	void doSnow();
-	void doRain();
 };
 
 #endif // __HELLOWORLD_SCENE_H__
