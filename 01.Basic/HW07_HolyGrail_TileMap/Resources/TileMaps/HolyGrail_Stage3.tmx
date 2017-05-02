@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="15" height="10" tilewidth="32" tileheight="32" nextobjectid="33">
+ <tileset firstgid="1" name="HolyGrail" tilewidth="32" tileheight="32" spacing="1" margin="1" tilecount="48" columns="8">
+  <image source="tmw_desert_spacing.png" width="265" height="199"/>
+ </tileset>
+ <tileset firstgid="49" name="Meta" tilewidth="32" tileheight="32" spacing="1" margin="1" tilecount="10" columns="5">
+  <image source="metaset10way.png" width="166" height="67"/>
+  <tile id="0">
+   <properties>
+    <property name="Wall" value="YES"/>
+   </properties>
+  </tile>
+  <tile id="1">
+   <properties>
+    <property name="Items" value="W_Sword001"/>
+   </properties>
+  </tile>
+  <tile id="2">
+   <properties>
+    <property name="Items" value="W_Mace008"/>
+   </properties>
+  </tile>
+  <tile id="3">
+   <properties>
+    <property name="Items" value="W_Sword015"/>
+   </properties>
+  </tile>
+  <tile id="4">
+   <properties>
+    <property name="Items" value="I_Key"/>
+   </properties>
+  </tile>
+  <tile id="5">
+   <properties>
+    <property name="Monster" value="Jelly"/>
+   </properties>
+  </tile>
+  <tile id="6">
+   <properties>
+    <property name="Monster" value="Demon"/>
+   </properties>
+  </tile>
+  <tile id="7">
+   <properties>
+    <property name="Monster" value="Wolf"/>
+   </properties>
+  </tile>
+  <tile id="9">
+   <properties>
+    <property name="Exit" value="I_Chest"/>
+   </properties>
+  </tile>
+ </tileset>
+ <layer name="Background" width="15" height="10">
+  <data encoding="base64" compression="zlib">
+   eJyTY2BgkEPCGmhYjgSsgYNNbb3o8vj0ksJHZ+NSi04TkiNkNjY+IT8TEy7Y4pVYcVzqiFUPAHzCExs=
+  </data>
+ </layer>
+ <objectgroup name="Objects">
+  <object id="1" name="HeroPoint" x="176" y="48"/>
+  <object id="2" name="W_Sword001Point_1" x="176" y="80"/>
+  <object id="3" name="W_Sword001Point_2" x="208" y="112"/>
+  <object id="4" name="W_Sword001Point_3" x="176" y="144"/>
+  <object id="5" name="W_Sword001Point_4" x="176" y="240"/>
+  <object id="6" name="W_Sword001Point_6" x="240" y="272"/>
+  <object id="7" name="W_Sword001Point_5" x="176" y="272"/>
+  <object id="8" name="W_Mace008Point_1" x="208" y="176"/>
+  <object id="10" name="W_Mace008Point_3" x="240" y="304"/>
+  <object id="11" name="W_Mace008Point_2" x="144" y="240"/>
+  <object id="12" name="W_Sword015Point_1" x="208" y="48"/>
+  <object id="13" name="W_Sword015Point_2" x="208" y="80"/>
+  <object id="14" name="W_Sword015Point_4" x="208" y="272"/>
+  <object id="15" name="W_Sword015Point_3" x="144" y="272"/>
+  <object id="16" name="I_KeyPoint" x="336" y="176"/>
+  <object id="17" name="I_ChestPoint" x="48" y="176"/>
+  <object id="18" name="WolfPoint_1" x="176" y="112"/>
+  <object id="19" name="WolfPoint_2" x="208" y="144"/>
+  <object id="20" name="WolfPoint_3" x="176" y="176"/>
+  <object id="21" name="WolfPoint_4" x="80" y="240"/>
+  <object id="22" name="WolfPoint_5" x="208" y="240"/>
+  <object id="23" name="WolfPoint_6" x="240" y="240"/>
+  <object id="24" name="WolfPoint_7" x="304" y="240"/>
+  <object id="25" name="DemonPoint_1" x="80" y="208"/>
+  <object id="26" name="DemonPoint_2" x="176" y="208"/>
+  <object id="27" name="DemonPoint_3" x="336" y="208"/>
+  <object id="28" name="JellyPoint_1" x="48" y="208"/>
+  <object id="29" name="JellyPoint_3" x="112" y="240"/>
+  <object id="30" name="JellyPoint_2" x="208" y="208"/>
+  <object id="31" name="JellyPoint_4" x="272" y="240"/>
+  <object id="32" name="ItemStatePoint" x="448" y="35"/>
+ </objectgroup>
+ <layer name="MetaInfo" width="15" height="10">
+  <data encoding="base64" compression="zlib">
+   eJydkFEOgDAIQ7kSOIfx/gfTJRCx6dRIwgftXgoTuZdCs5p5qbWfrH1k0R/zFjzz3lgLXkFn7A764BbQ1gnbz/Yye2g1ywlbs3rk5c6pPe1f5ybXPxt5x1i8Q2MHVukfLlIRVQ==
+  </data>
+ </layer>
+</map>

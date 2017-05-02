@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="15" height="10" tilewidth="32" tileheight="32" nextobjectid="10">
+ <tileset firstgid="1" name="HolyGrail" tilewidth="32" tileheight="32" spacing="1" margin="1" tilecount="48" columns="8">
+  <image source="../../cocos2d-x/tests/cpp-tests/Resources/TileMaps/tmw_desert_spacing.png" width="265" height="199"/>
+ </tileset>
+ <tileset firstgid="49" name="Meta" tilewidth="32" tileheight="32" spacing="1" margin="1" tilecount="10" columns="5">
+  <image source="../../cocos2d-x/tests/cpp-tests/Resources/TileMaps/HolyGrail/metaset10way.png" width="166" height="67"/>
+  <tile id="0">
+   <properties>
+    <property name="Wall" value="YES"/>
+   </properties>
+  </tile>
+  <tile id="1">
+   <properties>
+    <property name="Items" value="sword"/>
+   </properties>
+  </tile>
+  <tile id="2">
+   <properties>
+    <property name="Items" value="magic"/>
+   </properties>
+  </tile>
+  <tile id="3">
+   <properties>
+    <property name="Items" value="msword"/>
+   </properties>
+  </tile>
+  <tile id="4">
+   <properties>
+    <property name="Items" value="key"/>
+   </properties>
+  </tile>
+  <tile id="5">
+   <properties>
+    <property name="Monster" value="slime"/>
+   </properties>
+  </tile>
+  <tile id="6">
+   <properties>
+    <property name="Monster" value="bat"/>
+   </properties>
+  </tile>
+  <tile id="7">
+   <properties>
+    <property name="Monster" value="wolf"/>
+   </properties>
+  </tile>
+  <tile id="9">
+   <properties>
+    <property name="Exit" value="box"/>
+   </properties>
+  </tile>
+ </tileset>
+ <layer name="Background" width="15" height="10">
+  <data encoding="base64" compression="zlib">
+   eJyTY2BgkBvFo5jKGADAHBGV
+  </data>
+ </layer>
+ <objectgroup name="Objects">
+  <object id="1" name="UserPoint" x="48" y="48"/>
+  <object id="2" name="SwordPoint" x="112" y="48"/>
+  <object id="3" name="SlimePoint" x="112" y="112"/>
+  <object id="4" name="MSordPoint" x="112" y="176"/>
+  <object id="5" name="BoxPoint" x="112" y="240"/>
+  <object id="6" name="WolfPoint" x="272" y="48"/>
+  <object id="7" name="MagicPoint" x="272" y="112"/>
+  <object id="8" name="BatPoint" x="272" y="176"/>
+  <object id="9" name="KeyPoint" x="272" y="240"/>
+ </objectgroup>
+ <layer name="MetaInfo" width="15" height="10">
+  <data encoding="base64" compression="zlib">
+   eJxjYCAdGEIxMjDCos6CSL2U2GuGRZ0xHew1waLOnA72WmFRZ0oHe0nVCwBVpgWC
+  </data>
+ </layer>
+</map>

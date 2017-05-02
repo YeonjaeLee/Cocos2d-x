@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="15" height="10" tilewidth="32" tileheight="32" nextobjectid="12">
+ <tileset firstgid="1" name="HolyGrail" tilewidth="32" tileheight="32" spacing="1" margin="1" tilecount="48" columns="8">
+  <image source="tmw_desert_spacing.png" width="265" height="199"/>
+ </tileset>
+ <tileset firstgid="49" name="Meta" tilewidth="32" tileheight="32" spacing="1" margin="1" tilecount="10" columns="5">
+  <image source="metaset10way.png" width="166" height="67"/>
+  <tile id="0">
+   <properties>
+    <property name="Wall" value="YES"/>
+   </properties>
+  </tile>
+  <tile id="1">
+   <properties>
+    <property name="Items" value="W_Sword001"/>
+   </properties>
+  </tile>
+  <tile id="2">
+   <properties>
+    <property name="Items" value="W_Mace008"/>
+   </properties>
+  </tile>
+  <tile id="3">
+   <properties>
+    <property name="Items" value="W_Sword015"/>
+   </properties>
+  </tile>
+  <tile id="4">
+   <properties>
+    <property name="Items" value="I_Key"/>
+   </properties>
+  </tile>
+  <tile id="5">
+   <properties>
+    <property name="Monster" value="Jelly"/>
+   </properties>
+  </tile>
+  <tile id="6">
+   <properties>
+    <property name="Monster" value="Demon"/>
+   </properties>
+  </tile>
+  <tile id="7">
+   <properties>
+    <property name="Monster" value="Wolf"/>
+   </properties>
+  </tile>
+  <tile id="9">
+   <properties>
+    <property name="Exit" value="I_Chest"/>
+   </properties>
+  </tile>
+ </tileset>
+ <layer name="Background" width="15" height="10">
+  <data encoding="base64" compression="zlib">
+   eJyTY2BgkBvFo5jKGADAHBGV
+  </data>
+ </layer>
+ <objectgroup name="Objects">
+  <object id="1" name="HeroPoint" x="48" y="48"/>
+  <object id="2" name="W_Sword001Point" x="112" y="48"/>
+  <object id="3" name="JellyPoint" x="112" y="112"/>
+  <object id="4" name="W_Sword015Point" x="112" y="176"/>
+  <object id="5" name="I_ChestPoint" x="112" y="240"/>
+  <object id="6" name="WolfPoint" x="272" y="48"/>
+  <object id="7" name="W_Mace008Point" x="272" y="112"/>
+  <object id="8" name="DemonPoint" x="272" y="176"/>
+  <object id="9" name="I_KeyPoint" x="272" y="240"/>
+  <object id="10" name="ItemStatePoint" x="448" y="35"/>
+ </objectgroup>
+ <layer name="MetaInfo" width="15" height="10">
+  <data encoding="base64" compression="zlib">
+   eJxjYCAdGEIxMjDCos6CSL2U2GuGRZ0xHew1waLOnA72WmFRZ0oHe0nVCwBVpgWC
+  </data>
+ </layer>
+</map>
