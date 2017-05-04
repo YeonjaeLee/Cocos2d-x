@@ -441,7 +441,7 @@ void HelloWorld::onTouchEnded(Touch* touch, Event* event)
 			nNum[8] = nNum[5];
 			nNum[5] = temp;
 		}
-		else if (nNum[6] == hidesprtag)
+		else if (nNum[7] == hidesprtag)
 		{
 			int temp;
 			temp = nNum[8];
