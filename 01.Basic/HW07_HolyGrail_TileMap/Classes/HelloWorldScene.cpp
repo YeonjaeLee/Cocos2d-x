@@ -507,9 +507,11 @@ void HelloWorld::resetItemState()
 
 bool HelloWorld::onTouchBegan(Touch* touch, Event* event)
 {
-	if (pHero->getNumberOfRunningActions() == 0)
+	// 액션중에 다른액션이 실행되도록 하지못하게한다.(연타 방지)
+	if (pHero->getNumberOfRunningActions())
 	{
-		return true;
+		log("광클 금지");
+		return false;
 	}
 	return true;
 }
