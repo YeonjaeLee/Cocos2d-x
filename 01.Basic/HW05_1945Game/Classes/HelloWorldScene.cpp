@@ -25,6 +25,17 @@ bool HelloWorld::init()
 		return false;
 	}
 	/////////////////////////////////////////////
+
+	MenuItemImage *pCloseItem = MenuItemImage::create(
+		"CloseNormal.png",
+		"CloseSelected.png",
+		this,
+		menu_selector(HelloWorld::menuCloseCallback));
+	pCloseItem->setPosition(Vec2(20, Director::sharedDirector()->getWinSize().height - 20));
+	Menu* pMenu = Menu::create(pCloseItem, NULL);
+	pMenu->setPosition(Vec2(0, 0));
+	this->addChild(pMenu, 1);
+
 	SimpleAudioEngine::getInstance()->playBackgroundMusic("Sounds/mainMainMusic.mp3", true);
 
 	SimpleAudioEngine::getInstance()->setEffectsVolume(1.0);
@@ -69,8 +80,26 @@ bool HelloWorld::init()
 	UserLife3->setScale(0.05);
 	this->addChild(UserLife3);
 
+	pLabel1 = LabelTTF::create("1", "Thonburi", 45);
+	pLabel1->setColor(Color3B::RED);
+	pLabel1->setPosition(Vec2(size_.width / 2, size_.height / 2 + 30));
+	pLabel1->setVisible(false);
+	this->addChild(pLabel1, 3);
+
+	pLabel2 = LabelTTF::create("2", "Thonburi", 45);
+	pLabel2->setColor(Color3B::RED);
+	pLabel2->setPosition(Vec2(size_.width / 2, size_.height / 2 + 30));
+	pLabel2->setVisible(false);
+	this->addChild(pLabel2, 3);
+
+	pLabel3 = LabelTTF::create("3", "Thonburi", 45);
+	pLabel3->setColor(Color3B::RED);
+	pLabel3->setPosition(Vec2(size_.width / 2, size_.height / 2 + 30));
+	pLabel3->setVisible(false);
+	this->addChild(pLabel3, 3);
+
 	GameOver = Sprite::create("1945/GAMEOVER.png");
-	GameOver->setPosition(Vec2(size_.width /2, size_.height / 2));
+	GameOver->setPosition(Vec2(size_.width /2, size_.height / 2 + 30));
 	GameOver->setScale(1.0);
 	GameOver->setVisible(false);
 	this->addChild(GameOver,3);
@@ -125,58 +154,73 @@ void HelloWorld::Update(float time)
 	// 적과 미사일을 지울 백터를 만든다.
 	Vector<Sprite*> eraseEnemy;
 	Vector<Sprite*> eraseMissile;
-	for (auto enemy : enemy_)
+
+	/*if (regenCheckTime_ > 6)
 	{
-		// 적 비행기가 화면 아래로 사라졌을 경우 메모리에서 삭제합니다
-		if (enemy->getPosition().y <= 0)
+		soon = true;
+	}*/
+
+	if (state == 0)
+	{
+		for (auto enemy : enemy_)
 		{
-			// 적을 지울 백터에 넣는다.
-			eraseEnemy.pushBack(enemy);
-		}
-		//모든 미사일 백터를 반복하여 충돌검사
-		for (int a = 0; a < MAX_MISSILE; a++)
-		{
-			for(auto missile :missile_[a])
+			// 적 비행기가 화면 아래로 사라졌을 경우 메모리에서 삭제합니다
+			if (enemy->getPosition().y <= 0)
 			{
-				//미사일이 화면 위쪽으로 사라졌을 때
-				if (missile->getPosition().y >= size_.height)
+				// 적을 지울 백터에 넣는다.
+				eraseEnemy.pushBack(enemy);
+			}
+			//모든 미사일 백터를 반복하여 충돌검사
+			for (int a = 0; a < MAX_MISSILE; a++)
+			{
+				for (auto missile : missile_[a])
 				{
-					//미사일 삭제
-					eraseMissile.pushBack(missile);
-				}
+					//미사일이 화면 위쪽으로 사라졌을 때
+					if (missile->getPosition().y >= size_.height)
+					{
+						//미사일 삭제
+						eraseMissile.pushBack(missile);
+					}
 
-				if (missile->boundingBox().intersectsRect(enemy->boundingBox()))
-				{
-					//미사일과 적 비행기가 부딪혔을 때
-					PutCrashEffect(enemy->getPosition());
+					if (missile->boundingBox().intersectsRect(enemy->boundingBox()))
+					{
+						//미사일과 적 비행기가 부딪혔을 때
+						PutCrashEffect(enemy->getPosition());
 
-					//적 비행기 삭제
-					eraseEnemy.pushBack(enemy);
+						//적 비행기 삭제
+						eraseEnemy.pushBack(enemy);
 
-					//미사일 삭제
-					eraseMissile.pushBack(missile);
+						//미사일 삭제
+						eraseMissile.pushBack(missile);
+					}
 				}
 			}
-		}
-		if (player_)
-		{
-			//intersectsRect함수 리턴값이 충돌하면 true를 리턴
-			if (player_->boundingBox().intersectsRect(enemy->boundingBox()))
+			if (player_)
 			{
-				//충돌했을때 처리
-				LifeCount--;
-				UserLife(LifeCount);
+				
+					//intersectsRect함수 리턴값이 충돌하면 true를 리턴
+					if (player_->boundingBox().intersectsRect(enemy->boundingBox()))
+					{
+						/*if (soon == true)
+						{*/
+							//충돌했을때 처리
+							LifeCount--;
+							UserLife(LifeCount);
 
-				//1.폭파 이펙트 출력
-				PutCrashEffect(player_->getPosition());
-				PutCrashEffect(enemy->getPosition());
+							player_->setVisible(false);
+							//1.폭파 이펙트 출력
+							PutCrashEffect(player_->getPosition());
+							PutCrashEffect(enemy->getPosition());
 
-				//2.적 비행기를 화면에서 없애준다
+							//2.적 비행기를 화면에서 없애준다
 
-				//Scene에서 적비행기 스프라이트를 Remove한다
-				eraseEnemy.pushBack(enemy);
-
-				regenCheckTime_ = 0.f;	
+							//Scene에서 적비행기 스프라이트를 Remove한다
+							eraseEnemy.pushBack(enemy);
+							regenCheckTime_ = 0.f;
+							state = 1;
+						/*}*/
+					}
+				
 			}
 		}
 	}
@@ -196,26 +240,48 @@ void HelloWorld::Update(float time)
 	eraseMissile.clear();
 
 	// 유저 비행기가 죽었을때만 체크하여 부활처리
-	if (!LifeCount > 0)
+	if (state == 1 && LifeCount > 0)
 	{
 		//시간을 누적시켜서 3초 이상 경과되었을 때만 부활시킨다
 		regenCheckTime_ += time;
 		log("%d", regenCheckTime_);
+
+		if (regenCheckTime_ <= 1.f)
+		{
+			pLabel3->setVisible(true);
+			pLabel2->setVisible(false);
+			pLabel1->setVisible(false);
+		}
+		else if (regenCheckTime_ <= 2.f)
+		{
+			pLabel3->setVisible(false);
+			pLabel2->setVisible(true);
+			pLabel1->setVisible(false);
+		}
+		else if (regenCheckTime_ <= 3.f)
+		{
+			pLabel3->setVisible(false);
+			pLabel2->setVisible(false);
+			pLabel1->setVisible(true);
+		}
+		else
+		{
+			pLabel3->setVisible(false);
+			pLabel2->setVisible(false);
+			pLabel1->setVisible(false);
+		}
 		if (regenCheckTime_ >= 3.f)
 		{
+			state = 0;
+		//	soon = false;
 			//유저 비행기 부활처리
 			player_ = Sprite::create("1945/airplain_01.png");
 			player_->setPosition(Vec2(size_.width / 2, 50));
+			player_->setVisible(true);
+
 			this->addChild(player_, 1);
-			LifeCount = 3;
-			/*pMenu_pReplayItem->setVisible(false);
-			GameOver->setVisible(false);*/
-//			SimpleAudioEngine::getInstance()->playBackgroundMusic("Sounds/mainMainMusic.mp3", true);
-//			Director::getInstance()->resume();
-			
 		}
 	}
-
 	// 현재 배열의 크기 = 적 비행기 갯수
 	log("%d", enemy_.size());
 }
@@ -240,20 +306,17 @@ void HelloWorld::UserLife(int LifeCount)
 		UserLife2->setVisible(false);
 		UserLife3->setVisible(true);
 	}
-	else
+	else if (LifeCount == 0)
 	{
 		UserLife1->setVisible(false);
 		UserLife2->setVisible(false);
 		UserLife3->setVisible(false);
-
-//		SimpleAudioEngine::getInstance()->pauseBackgroundMusic();
-		SimpleAudioEngine::getInstance()->playEffect("Sounds/shipDestroyEffect.mp3");
-//		Director::getInstance()->pause();
-
 		player_->setVisible(false);
-		
-		/*GameOver->setVisible(true);
-		pMenu_pReplayItem->setVisible(true);*/
+		GameOver->setVisible(true);
+		pMenu_pReplayItem->setVisible(true);
+
+		SimpleAudioEngine::getInstance()->playEffect("Sounds/shipDestroyEffect.mp3");
+		Director::getInstance()->pause();
 	}
 }
 
@@ -261,9 +324,11 @@ void HelloWorld::Shooting(float time)
 {
 	if (!player_)
 		return;
+	if (!state == 0)
+		return;
 	for (int a = 0; a < MAX_MISSILE; ++a)
 	{
-		Sprite *missile = Sprite::create("1945/missile.png");
+		missile = Sprite::create("1945/missile.png");
 
 		if (a == 0)
 		{
@@ -273,10 +338,12 @@ void HelloWorld::Shooting(float time)
 		{
 			missile->setPosition(Vec2(player_->getPosition().x + 16.f, player_->getPosition().y));
 		}
+		
+		missile->setVisible(true);
 		SimpleAudioEngine::getInstance()->playEffect("Sounds/fireEffect.mp3");
 		SimpleAudioEngine::getInstance()->setEffectsVolume(0.5);
 		this->addChild(missile);
-
+		
 		Size size = Director::sharedDirector()->getWinSize();
 		ActionInterval *move = MoveBy::create(0.75f, Vec2(0, size.height));
 		missile->runAction(move);
@@ -405,11 +472,12 @@ void HelloWorld::menuCloseCallback(Ref* pSender)
 
 void HelloWorld::doClick(Ref* pSender)
 {
+	Director::getInstance()->resume();
+
 	log("Replay 버튼 클릭. ");
 	LifeCount = 3;
-	pMenu_pReplayItem->setVisible(false);
+	state = 0;
 	GameOver->setVisible(false);
-	SimpleAudioEngine::getInstance()->playBackgroundMusic("Sounds/mainMainMusic.mp3", true);
-	Director::getInstance()->resume();
+	pMenu_pReplayItem->setVisible(false);
 	init();
 }

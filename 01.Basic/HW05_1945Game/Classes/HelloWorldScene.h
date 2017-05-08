@@ -46,19 +46,25 @@ public:
 	cocos2d::Sprite* UserLife1;
 	cocos2d::Sprite* UserLife2;
 	cocos2d::Sprite* UserLife3;
+	cocos2d::LabelTTF* pLabel1;
+	cocos2d::LabelTTF* pLabel2;
+	cocos2d::LabelTTF* pLabel3;
+
 	cocos2d::Sprite* GameOver;
 	cocos2d::Menu* pMenu_pReplayItem;
 
-	int LifeCount = 3;
 
 private:
 	Sprite *player_;//주인공 플레이어
+	Sprite *missile;
 	Vector<Sprite*> missile_[MAX_MISSILE];
 	Vector<Sprite*> enemy_;//적비행기 CCArray(배열, 리스트 구조)
 
 	Vec2 distance_;
 	Size size_;
-	int playerLife = 3;
+	int LifeCount = 3;
+	int state = 0;
+	bool soon = true;
 
 	float regenCheckTime_;
 };
