@@ -211,10 +211,10 @@ void HelloWorld::onExit()
 
 bool HelloWorld::onTouchBegan(Touch* touch, Event* event)
 {
-	// 액션중 터치 불가
-	if (pmovespr->getNumberOfRunningActions() == 0)
+	if (tamara->getNumberOfRunningActions())             // 액션중에 다른액션이 실행되도록 하지못하게한다.(연타 방지)
 	{
-		return true;
+		log("광클 금지");
+		return false;
 	}
 	log("클릭");
 	return true;
