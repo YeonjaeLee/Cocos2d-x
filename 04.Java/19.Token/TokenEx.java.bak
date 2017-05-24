@@ -1,0 +1,15 @@
+import java.util.StringTokenizer;
+
+class TokenEx 
+{
+	public static void main(String[] args) 
+	{
+		String strData = "11:22:33:44:55";
+		StringTokenizer st = new StringTokenizer(strData, ":");
+
+		while(st.hasMoreTokens()) // 반환할 토큰이 있는가
+		{
+			System.out.println(st.nextToken()); // 다음번 토큰 반환
+		}
+	}
+}

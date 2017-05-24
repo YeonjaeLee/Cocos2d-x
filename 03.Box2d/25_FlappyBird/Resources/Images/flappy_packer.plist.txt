@@ -1,0 +1,38 @@
+<key>base.png</key>
+<key>base1.png</key>
+<key>base2.png</key>
+<key>bird1.png</key>
+<key>bird2.png</key>
+<key>bird3.png</key>
+<key>click.png</key>
+<key>flappybird.png</key>
+<key>gameover.png</key>
+<key>getready.png</key>
+<key>grade.png</key>
+<key>gray.png</key>
+<key>holdback1.png</key>
+<key>holdback2.png</key>
+<key>holdback3.png</key>
+<key>menu.png</key>
+<key>new.png</key>
+<key>number.png</key>
+<key>ok.png</key>
+<key>rate.png</key>
+<key>share.png</key>
+<key>start.png</key>	
+<key>start1.png</key>		
+<key>yellow.png</key>
+
+
+b2Vec2 verts[] =
+	{
+		b2Vec2(-21.6f / PTM_RATIO, -13.4f / PTM_RATIO),
+		b2Vec2(-27.6f / PTM_RATIO, 5.0f / PTM_RATIO),
+		b2Vec2(-7.3f / PTM_RATIO, 20.4f / PTM_RATIO),
+		b2Vec2(10.3f / PTM_RATIO, 20.4f / PTM_RATIO),
+		b2Vec2(28.0f / PTM_RATIO, -9.25f / PTM_RATIO),
+		b2Vec2(15.25f / PTM_RATIO, -17.0f / PTM_RATIO),
+		b2Vec2(-15.0f / PTM_RATIO, -18.5f / PTM_RATIO),
+		b2Vec2(-20.55f / PTM_RATIO, 10.95f / PTM_RATIO)
+	};
+	spriteShape.Set(verts, 7);
